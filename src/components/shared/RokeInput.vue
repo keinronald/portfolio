@@ -8,13 +8,14 @@
         :name="customId"
         :id="customId"
         required="required"
-        v-model="value"
         @change="checkInput"
+        :value="inputData"
+        @input="$emit('update:inputData', $event.target.value)"
       />
       <label
         :for="customId"
         class="input__placeholder"
-        :class="{ 'input__placeholder--top': value !== '' }"
+        :class="{ 'input__placeholder--top': inputData !== '' }"
       >
         {{ placeholder }}
       </label>
@@ -22,7 +23,8 @@
                 placeholder="Schreib mir eine Nachricht..."
                 class="input"
                 required="required"
-                v-model="value"></textarea>
+                :value="inputData"
+                @input="$emit('update:inputData', $event.target.value)"></textarea>
     </div>
     <div class="input__spacer" :class="{ 'input__spacer--error': error }"></div>
   </div>
@@ -41,7 +43,7 @@ export default {
       default: "",
       type: String,
     },
-    value: {
+    inputData: {
       type: String,
       default: "",
     },
@@ -53,10 +55,9 @@ export default {
       type: String,
       default: "text",
     },
-  },
-  computed: {
-    customId() {
-      return this.placeholder.toLowerCase();
+    customId: {
+      type: String,
+      required: true,
     },
   },
   methods: {

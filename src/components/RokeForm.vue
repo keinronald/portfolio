@@ -15,18 +15,21 @@
         <input type="hidden" name="form-name" value="contact" />
         <roke-input
           placeholder="Name"
-          v-model="formData.name"
+          customId="name"
+          :inputData.sync="formData.name"
           class="form__field--half"
         />
         <roke-input
           placeholder="E-Mail"
-          v-model="formData.email"
+          customId="email"
+          :inputData.sync="formData.email"
           type="email"
           class="form__field--half"
         />
         <roke-input
           placeholder="Nachricht"
-          v-model="formData.message"
+          customId="message"
+          :inputData.sync="formData.message"
           textarea
           class="form__field"
         />
@@ -61,12 +64,23 @@ export default {
         formData.append(key, data[key]);
       }
 
+      console.log('------');
+      console.log(data);
+      console.log(formData);
+
       return formData;
     },
     handleFormSubmit(e) {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" },
       };
+
+      console.log(
+        this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData,
+        })
+      );
 
       axios
         .post(
