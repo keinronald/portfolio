@@ -72,6 +72,7 @@ export default {
 .input {
   background: transparent;
   width: 100%;
+  max-width: 100%;
   border: 0;
   font-size: 1.3rem;
   outline: none;
