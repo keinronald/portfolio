@@ -44,7 +44,7 @@ export default {
   align-items: center;
   justify-content: center;
   transition: background-color 250ms ease-in-out, filter 250ms ease-in-out;
-  filter: grayscale(100%);
+  filter: saturate(100%);
 
   // drop-shadow
   &::after {
@@ -63,7 +63,7 @@ export default {
 
   &:hover {
     box-sizing: border-box;
-    filter: grayscale(0%);
+    filter: saturate(150%);
 
     &::after {
       opacity: 1;
