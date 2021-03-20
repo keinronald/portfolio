@@ -64,23 +64,12 @@ export default {
         formData.append(key, data[key]);
       }
 
-      console.log('------');
-      console.log(data);
-      console.log(formData);
-
       return formData;
     },
     handleFormSubmit(e) {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" },
       };
-
-      console.log(
-        this.encode({
-          "form-name": e.target.getAttribute("name"),
-          ...this.formData,
-        })
-      );
 
       axios
         .post(
