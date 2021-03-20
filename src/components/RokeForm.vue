@@ -2,7 +2,7 @@
   <div class="form-section">
     <section class="container">
       <h2>Shoot me a message!</h2>
-      <form action="POST" data-netlify="true" class="form">
+      <form name="contact" method="POST" data-netlify="true" class="form">
         <roke-input
           placeholder="Name"
           v-model="name"
