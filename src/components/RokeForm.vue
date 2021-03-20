@@ -4,30 +4,33 @@
       <h2>Shoot me a message!</h2>
       <form
         name="contact"
-        method="POST"
+        method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         class="form"
+        enctype="application/x-www-form-urlencoded"
+        @submit.prevent="handleFormSubmit"
       >
         <input type="hidden" name="form-name" value="contact" />
         <roke-input
           placeholder="Name"
-          v-model="name"
+          v-model="formData.name"
           class="form__field--half"
         />
         <roke-input
           placeholder="E-Mail"
-          v-model="email"
+          v-model="formData.email"
           type="email"
           class="form__field--half"
         />
         <roke-input
           placeholder="Nachricht"
-          v-model="message"
+          v-model="formData.message"
           textarea
           class="form__field"
         />
-        <div data-netlify-recaptcha="true" class="form__recaptcha"></div>
+        <div data-netlify-recaptcha="true"></div>
         <input type="submit" value="Nachricht senden" class="form__button" />
       </form>
     </section>
@@ -36,15 +39,48 @@
 
 <script>
 import RokeInput from "@/components/shared/RokeInput";
+import axios from "axios";
+
 export default {
   name: "RokeForm",
   components: { RokeInput },
   data() {
     return {
-      name: "",
-      email: "",
-      message: "",
+      formData: {
+        name: "",
+        email: "",
+        message: "",
+      },
     };
+  },
+  methods: {
+    encode(data) {
+      const formData = new FormData();
+
+      for (const key of Object.keys(data)) {
+        formData.append(key, data[key]);
+      }
+
+      return formData;
+    },
+    handleFormSubmit(e) {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+      };
+
+      axios
+        .post(
+          location.href,
+          this.encode({
+            "form-name": e.target.getAttribute("name"),
+            ...this.formData,
+          }),
+          axiosConfig
+        )
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error))
+        .then(() => alert("Danke!"));
+    },
   },
 };
 </script>
@@ -85,18 +121,18 @@ export default {
     margin: 1.5rem auto 0;
     background-color: unset;
     border: none;
-    color: #6252BA;
+    color: #6252ba;
     font-weight: bold;
     padding: 10px 20px 5px;
     cursor: pointer;
 
-    box-shadow: inset 0 -3px 0 -1px #6252BA;
+    box-shadow: inset 0 -3px 0 -1px #6252ba;
     transition: box-shadow 0.15s ease-in-out, color 0.15s ease-in-out;
     line-height: 40px;
 
     &:hover {
       color: white;
-      box-shadow: inset 0 -50px 0 -1px #6252BA;
+      box-shadow: inset 0 -50px 0 -1px #6252ba;
     }
   }
 
