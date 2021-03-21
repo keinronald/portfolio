@@ -60,6 +60,7 @@ export default {
     transition: transform 250ms ease-in-out;
     cursor: pointer;
     margin-right: 50px;
+    opacity: 0.9;
   }
 
   &__container {

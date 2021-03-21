@@ -20,7 +20,7 @@
         {{ placeholder }}
       </label>
       <textarea v-if="textarea" :name="customId" :id="customId" rows="3"
-                placeholder="Schreib mir eine Nachricht..."
+                placeholder="Your Message"
                 class="input"
                 required="required"
                 :value="inputData"
