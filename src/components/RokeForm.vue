@@ -135,6 +135,7 @@ export default {
     margin: 1.5rem auto 0;
     background-color: unset;
     border: none;
+    border-radius: 0;
     color: #6252ba;
     font-weight: bold;
     padding: 10px 20px 5px;

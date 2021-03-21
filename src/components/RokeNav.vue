@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  z-index: 5;
+  z-index: 100;
   position: fixed;
   padding: 30px;
   width: 100%;
