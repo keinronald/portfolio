@@ -2,20 +2,27 @@
   <section class="hero">
     <div class="hero__container">
       <div class="hero__section">
-        <h2 class="hero__catch-line">Building smarter websites.</h2>
-        <p class="hero__sub-line">Wether you're planning a holiday, sharing a shopping list with a pertner or managing
-          multiple work projects.</p>
+        <h2 class="hero__catch-line">Building beautiful websites.</h2>
+        <p class="hero__sub-line">
+          I'm <strong>Ronald</strong> - a web-developer from Austria. My passion
+          is creating beautiful web presences. With every line of code, I strive
+          to make the web a better place.
+        </p>
       </div>
       <div class="hero__section--image">
         <div class="hero__image">
-          <div class="hero__bubble hero__bubble--top-right">I'm a Developer by &lt;3</div>
-          <div class="hero__bubble">I'm a Developer by &lt;3</div>
+          <div class="hero__bubble hero__bubble--top-right">I'm Ronald Keinberger!</div>
+          <div class="hero__bubble">Developer by 🤍</div>
         </div>
-
       </div>
     </div>
-    <svg class="hero__arch container__arch" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40"
-         xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="hero__arch container__arch"
+      fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 1680 40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#fff"></path>
     </svg>
   </section>
@@ -48,7 +55,7 @@ export default {
 
   padding-top: 82px;
   height: 98vh;
-  width: 100vw;
+  width: 100%;
   min-height: 500px;
 
   @include md {
@@ -129,6 +136,7 @@ export default {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     text-align: center;
+    color: black;
 
     // position
     bottom: 10%;

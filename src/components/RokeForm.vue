@@ -37,14 +37,14 @@
           class="form__field--half"
         />
         <roke-input
-          placeholder="Nachricht"
+          placeholder="Message"
           customId="message"
           :inputData.sync="formData.message"
           textarea
           class="form__field"
         />
         <div data-netlify-recaptcha="true"></div>
-        <input type="submit" value="Nachricht senden" class="form__button" />
+        <input type="submit" value="Send message" class="form__button" />
       </form>
     </section>
   </div>
