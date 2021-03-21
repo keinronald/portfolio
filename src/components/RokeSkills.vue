@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container container--no-padding">
     <h2>Skills</h2>
     <div class="skills">
       <roke-circular-icon

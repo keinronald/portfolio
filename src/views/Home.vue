@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <roke-hero />
-    <roke-skills />
+    <roke-skills id="skills" />
     <roke-form />
   </div>
 </template>

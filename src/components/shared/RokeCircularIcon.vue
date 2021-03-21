@@ -5,7 +5,6 @@
       :src="logo"
       class="icon__image"
       height="100"
-      width="100"
     />
     <p class="icon__description">{{ title }}</p>
   </div>

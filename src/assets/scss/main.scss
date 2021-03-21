@@ -1,8 +1,12 @@
+@import "variables";
+@import "mixins";
+
 body {
   margin: 0;
 }
 
 .container {
+  position: relative;
   width: 100vw;
   max-width: 1480px;
   // max-width: 1140px;
@@ -11,6 +15,12 @@ body {
 
   &--no-padding {
     padding: 0;
+  }
+
+  &__arch {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
   }
 }
 
