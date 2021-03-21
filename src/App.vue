@@ -2,6 +2,7 @@
   <div id="app">
     <roke-nav />
     <router-view />
+    <roke-footer />
   </div>
 </template>
 
@@ -11,14 +12,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-
 }
-
-
 </style>
+
 <script>
 import RokeNav from "@/components/RokeNav";
+import RokeFooter from "@/components/RokeFooter";
 export default {
-  components: { RokeNav },
-}
+  components: { RokeFooter, RokeNav },
+};
 </script>
