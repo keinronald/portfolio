@@ -1,7 +1,7 @@
 <template>
   <nav class="nav" :class="{ 'nav--scrolled': !onTop }">
     <div class="container container--no-padding nav__container">
-      <router-link to="/">
+      <router-link to="/" @click.native="scrollToTop">
         <img
           class="nav__logo"
           :src="require('../assets/images/logo.png')"
@@ -9,13 +9,18 @@
           alt="Logo"
         />
       </router-link>
-      <router-link class="nav__link" to="/">Home</router-link>
-      <a class="nav__link" @click="scrollTo('skills')">Skills</a>
+      <router-link class="nav__link" @click.native="scrollToTop" to="/">
+        Home
+      </router-link>
+      <router-link class="nav__link" :to="{ path: '/', hash: '#skills' }">
+        Skills
+      </router-link>
     </div>
   </nav>
 </template>
 
 <script>
+
 export default {
   name: "RokeNav",
   data() {
@@ -27,13 +32,12 @@ export default {
     handleScroll() {
       this.onTop = window.pageYOffset === 0;
     },
-    scrollTo(id = undefined) {
-      const headerOffset = 100;
-      const elementPosition = id
-        ? document.getElementById(id).getBoundingClientRect().top - headerOffset
-        : 0;
-
-      window.scrollTo({ top: elementPosition, behavior: "smooth" });
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
     },
   },
   created: function () {
