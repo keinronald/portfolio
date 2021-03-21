@@ -1,5 +1,15 @@
 <template>
   <div class="form-section">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 1680 40"
+      class="form__arch container__arch"
+      style="transform: scaleY(-1)"
+    >
+      <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#fff"></path>
+    </svg>
     <section class="container">
       <h2>Shoot me a message!</h2>
       <form
@@ -90,6 +100,7 @@ export default {
 
 <style lang="scss" scoped>
 .form-section {
+  position: relative;
   background: #f0daf8; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     110deg,
@@ -141,6 +152,11 @@ export default {
 
   &__recaptcha {
     margin: 0 auto;
+  }
+
+  &__arch {
+    top: 0;
+    margin-top: -0.25rem;
   }
 }
 </style>

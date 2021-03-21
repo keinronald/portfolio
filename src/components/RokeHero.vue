@@ -3,7 +3,8 @@
     <div class="hero__container">
       <div class="hero__section">
         <h2 class="hero__catch-line">Building smarter websites.</h2>
-        <p class="hero__sub-line">Wether you're planning a holiday, sharing a shopping list with a pertner or managing multiple work projects.</p>
+        <p class="hero__sub-line">Wether you're planning a holiday, sharing a shopping list with a pertner or managing
+          multiple work projects.</p>
       </div>
       <div class="hero__section">
         <div class="hero__image"></div>
@@ -11,6 +12,10 @@
         <div class="hero__bubble">I'm a Developer by &lt;3</div>
       </div>
     </div>
+    <svg class="hero__arch container__arch" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#fff"></path>
+    </svg>
   </section>
 </template>
 
@@ -22,29 +27,31 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
+  position: relative;
   box-sizing: border-box;
   // background
   background: #f0daf8; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    110deg,
-    #f0daf8,
-    #ddf1fd,
-    #f2f3fc
+      110deg,
+      #f0daf8,
+      #ddf1fd,
+      #f2f3fc
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    110deg,
-    #f0daf8,
-    #ddf1fd,
-    #f2f3fc
+      110deg,
+      #f0daf8,
+      #ddf1fd,
+      #f2f3fc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   padding-top: 82px;
-  height: 90vh;
+  height: 98vh;
   width: 100vw;
 
   &__container {
     @extend .container;
 
+    padding-top: 0;
     display: flex;
     align-items: center;
     height: 100%;
@@ -77,7 +84,7 @@ export default {
     text-align: center;
 
     // position
-    top: calc(50% + 150px);
+    top: calc(50% + 200px);
     left: calc(55%);
     position: absolute;
 
@@ -88,7 +95,7 @@ export default {
 
     &--top-right {
       // position
-      top: calc(50% - 200px);
+      top: calc(50% - 150px);
       left: calc(55% + 300px);
       position: absolute;
     }
@@ -109,6 +116,13 @@ export default {
     -webkit-backdrop-filter: blur(4px);
     border-radius: 1000px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  &__arch {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
   }
 }
 </style>
