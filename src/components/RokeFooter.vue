@@ -1,7 +1,28 @@
 <template>
   <footer class="container footer">
-    <span>&copy; <strong>{{ currentYear }}</strong> Ronald Keinberger</span>
-    <span>created with ❤️ and <a href="https://vuejs.org/" rel="noopener" target="_blank" class="footer__link">Vue.js</a> - deployed by <a href="https://www.netlify.com/" rel="noopener" target="_blank" class="footer__link">Netlify</a></span>
+    <span>
+      &copy; <strong>{{ currentYear }}</strong> Ronald Keinberger
+    </span>
+    <span>
+      created with ❤️ and
+      <a
+        href="https://vuejs.org/"
+        rel="noopener"
+        target="_blank"
+        class="footer__link"
+      >
+        Vue.js
+      </a>
+      - deployed by
+      <a
+        href="https://www.netlify.com/"
+        rel="noopener"
+        target="_blank"
+        class="footer__link"
+      >
+        Netlify
+      </a>
+    </span>
   </footer>
 </template>
 
