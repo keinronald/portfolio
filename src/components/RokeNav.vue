@@ -1,6 +1,6 @@
 <template>
   <nav class="nav" :class="{ 'nav--scrolled': !onTop }">
-    <div class="container">
+    <div class="container container--no-padding">
       <h2>RK-logo</h2>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -33,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
+  z-index: 5;
   position: fixed;
   padding: 30px;
   width: 100%;
